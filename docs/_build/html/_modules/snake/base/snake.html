@@ -1,0 +1,374 @@
+<!doctype html>
+<html class="writer-html5" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>snake.base.snake &mdash; snake 3.3.24 documentation</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../_static/pygments.css?v=fa44fd50"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../_static/css/theme.css?v=19f00094"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../_static/custom.css?v=2fa51b1b"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../_static/dark_mode_css/general.css?v=c0a7eb24"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../_static/dark_mode_css/dark.css?v=bfd9ebc6"
+    />
+    <!--[if lt IE 9]>
+      <script src="../../../_static/js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script
+      data-url_root="../../../"
+      id="documentation_options"
+      src="../../../_static/documentation_options.js?v=ccc4c4f4"
+    ></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+    <script src="../../../_static/dark_mode_js/theme_switcher.js?v=a2af87b2"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  </head>
+
+  <body class="wy-body-for-nav">
+    <div class="wy-grid-for-nav">
+      <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+          <div class="wy-side-nav-search">
+            <a href="../../../index.html" class="icon icon-home"> snake </a>
+            <div class="version">3.3.24</div>
+            <div role="search">
+              <form
+                id="rtd-search-form"
+                class="wy-form"
+                action="../../../search.html"
+                method="get"
+              >
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search docs"
+                  aria-label="Search docs"
+                />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </div>
+          </div>
+          <div
+            class="wy-menu wy-menu-vertical"
+            data-spy="affix"
+            role="navigation"
+            aria-label="Navigation menu"
+          >
+            <p class="caption" role="heading">
+              <span class="caption-text">Contents:</span>
+            </p>
+            <ul>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../../../installation.html"
+                  >Installation</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../../../reference.html"
+                  >Reference</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../../../usage.html"
+                  >Usage</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../../../contributing.html"
+                  >Contributor Guide</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../../../authors.html"
+                  >Credits</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">snake</a>
+        </nav>
+
+        <div class="wy-nav-content">
+          <div class="rst-content">
+            <div role="navigation" aria-label="Page navigation">
+              <ul class="wy-breadcrumbs">
+                <li>
+                  <a
+                    href="../../../index.html"
+                    class="icon icon-home"
+                    aria-label="Home"
+                  ></a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="../../index.html">Module code</a>
+                </li>
+                <li class="breadcrumb-item active">snake.base.snake</li>
+                <li class="wy-breadcrumbs-aside"></li>
+              </ul>
+              <hr />
+            </div>
+            <div
+              role="main"
+              class="document"
+              itemscope="itemscope"
+              itemtype="http://schema.org/Article"
+            >
+              <div itemprop="articleBody">
+                <h1>Source code for snake.base.snake</h1>
+                <div class="highlight">
+                  <pre>
+<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">from</span> <span class="nn">snake.base.direc</span> <span class="kn">import</span> <span class="n">Direc</span>
+<span class="kn">from</span> <span class="nn">snake.base.point</span> <span class="kn">import</span> <span class="n">PointType</span>
+<span class="kn">from</span> <span class="nn">snake.base.pos</span> <span class="kn">import</span> <span class="n">Pos</span>
+
+
+<div class="viewcode-block" id="Snake"><a class="viewcode-back" href="../../../snake.base.html#snake.base.snake.Snake">[docs]</a><span class="k">class</span> <span class="nc">Snake</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Snake of the game.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game_map</span><span class="p">,</span> <span class="n">init_direc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">init_bodies</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">init_types</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a Snake object.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            game_map (base.map.Map): The map that the snake moves on.</span>
+<span class="sd">            init_direc (base.direc.Direc): Initial direction.</span>
+<span class="sd">            init_bodies (list of base.pos.Pos): Initial snake bodies positions.</span>
+<span class="sd">            init_types (list of base.point.PointType): Types of each position in init_bodies.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_map</span> <span class="o">=</span> <span class="n">game_map</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">=</span> <span class="n">init_direc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_bodies</span> <span class="o">=</span> <span class="n">init_bodies</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span> <span class="o">=</span> <span class="n">init_types</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Snake.reset"><a class="viewcode-back" href="../../../snake.base.html#snake.base.snake.Snake.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reset_map</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">rand_init</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># Randomly initialize</span>
+            <span class="n">rand_init</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">head_row</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">num_rows</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">head_col</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">num_cols</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">head_row</span><span class="p">,</span> <span class="n">head_col</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span><span class="p">,</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_init_bodies</span> <span class="o">=</span> <span class="p">[</span><span class="n">head</span><span class="p">,</span> <span class="n">head</span><span class="o">.</span><span class="n">adj</span><span class="p">(</span><span class="n">Direc</span><span class="o">.</span><span class="n">opposite</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span><span class="p">))]</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PointType</span><span class="o">.</span><span class="n">HEAD_L</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PointType</span><span class="o">.</span><span class="n">HEAD_U</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PointType</span><span class="o">.</span><span class="n">HEAD_R</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PointType</span><span class="o">.</span><span class="n">HEAD_D</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PointType</span><span class="o">.</span><span class="n">BODY_HOR</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PointType</span><span class="o">.</span><span class="n">BODY_VER</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_steps</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dead</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">=</span> <span class="n">Direc</span><span class="o">.</span><span class="n">NONE</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_init_bodies</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">reset_map</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_init_bodies</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">rand_init</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_init_direc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_bodies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_types</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="Snake.copy"><a class="viewcode-back" href="../../../snake.base.html#snake.base.snake.Snake.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">m_copy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">s_copy</span> <span class="o">=</span> <span class="n">Snake</span><span class="p">(</span><span class="n">m_copy</span><span class="p">,</span> <span class="n">Direc</span><span class="o">.</span><span class="n">NONE</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[])</span>
+        <span class="n">s_copy</span><span class="o">.</span><span class="n">_steps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_steps</span>
+        <span class="n">s_copy</span><span class="o">.</span><span class="n">_dead</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dead</span>
+        <span class="n">s_copy</span><span class="o">.</span><span class="n">_direc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span>
+        <span class="n">s_copy</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span>
+        <span class="n">s_copy</span><span class="o">.</span><span class="n">_bodies</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s_copy</span><span class="p">,</span> <span class="n">m_copy</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">steps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_steps</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dead</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dead</span>
+
+    <span class="nd">@dead</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">dead</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dead</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">direc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">direc_next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span>
+
+    <span class="nd">@direc_next</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">direc_next</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">bodies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span>
+
+<div class="viewcode-block" id="Snake.len"><a class="viewcode-back" href="../../../snake.base.html#snake.base.snake.Snake.len">[docs]</a>    <span class="k">def</span> <span class="nf">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Snake.head"><a class="viewcode-back" href="../../../snake.base.html#snake.base.snake.Snake.head">[docs]</a>    <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Snake.tail"><a class="viewcode-back" href="../../../snake.base.html#snake.base.snake.Snake.tail">[docs]</a>    <span class="k">def</span> <span class="nf">tail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Snake.move_path"><a class="viewcode-back" href="../../../snake.base.html#snake.base.snake.Snake.move_path">[docs]</a>    <span class="k">def</span> <span class="nf">move_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Snake.move"><a class="viewcode-back" href="../../../snake.base.html#snake.base.snake.Snake.move">[docs]</a>    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_direc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">new_direc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">=</span> <span class="n">new_direc</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dead</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">NONE</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">is_full</span><span class="p">()</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">opposite</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_direc</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="k">return</span>
+
+        <span class="n">old_head_type</span><span class="p">,</span> <span class="n">new_head_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_types</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">())</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">old_head_type</span>
+        <span class="n">new_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">adj</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="n">new_head</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">is_safe</span><span class="p">(</span><span class="n">new_head</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dead</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">new_head</span><span class="p">)</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">PointType</span><span class="o">.</span><span class="n">FOOD</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">rm_food</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_rm_tail</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">new_head</span><span class="p">)</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">new_head_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_steps</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+    <span class="k">def</span> <span class="nf">_rm_tail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_map</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">EMPTY</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_new_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">old_head_type</span><span class="p">,</span> <span class="n">new_head_type</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="c1"># new_head_type</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+            <span class="n">new_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">HEAD_L</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+            <span class="n">new_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">HEAD_U</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+            <span class="n">new_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">HEAD_R</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+            <span class="n">new_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">HEAD_D</span>
+        <span class="c1"># old_head_type</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span>
+        <span class="p">):</span>
+            <span class="n">old_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">BODY_HOR</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span>
+        <span class="p">):</span>
+            <span class="n">old_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">BODY_VER</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span>
+        <span class="p">):</span>
+            <span class="n">old_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">BODY_LU</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span>
+        <span class="p">):</span>
+            <span class="n">old_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">BODY_UR</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span>
+        <span class="p">):</span>
+            <span class="n">old_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">BODY_RD</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">RIGHT</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">DOWN</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_direc</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">UP</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_direc_next</span> <span class="o">==</span> <span class="n">Direc</span><span class="o">.</span><span class="n">LEFT</span>
+        <span class="p">):</span>
+            <span class="n">old_head_type</span> <span class="o">=</span> <span class="n">PointType</span><span class="o">.</span><span class="n">BODY_DL</span>
+        <span class="k">return</span> <span class="n">old_head_type</span><span class="p">,</span> <span class="n">new_head_type</span></div>
+</pre>
+                </div>
+              </div>
+            </div>
+            <footer>
+              <hr />
+
+              <div role="contentinfo">
+                <p>&#169; Copyright 2022, Semjon Geist.</p>
+              </div>
+
+              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
+              a
+              <a href="https://github.com/readthedocs/sphinx_rtd_theme"
+                >theme</a
+              >
+              provided by <a href="https://readthedocs.org">Read the Docs</a>.
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      jQuery(function () {
+        SphinxRtdTheme.Navigation.enable(true);
+      });
+    </script>
+  </body>
+</html>

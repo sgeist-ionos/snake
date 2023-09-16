@@ -1,0 +1,894 @@
+<!doctype html>
+<html class="writer-html5" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="generator"
+      content="Docutils 0.19: https://docutils.sourceforge.io/"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithms &mdash; snake 3.3.24 documentation</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/pygments.css?v=fa44fd50"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/css/theme.css?v=19f00094"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/custom.css?v=2fa51b1b"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/dark_mode_css/general.css?v=c0a7eb24"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/dark_mode_css/dark.css?v=bfd9ebc6"
+    />
+    <!--[if lt IE 9]>
+      <script src="../_static/js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script
+      data-url_root="../"
+      id="documentation_options"
+      src="../_static/documentation_options.js?v=ccc4c4f4"
+    ></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+    <script src="../_static/dark_mode_js/theme_switcher.js?v=a2af87b2"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  </head>
+
+  <body class="wy-body-for-nav">
+    <div class="wy-grid-for-nav">
+      <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+          <div class="wy-side-nav-search">
+            <a href="../index.html" class="icon icon-home"> snake </a>
+            <div class="version">3.3.24</div>
+            <div role="search">
+              <form
+                id="rtd-search-form"
+                class="wy-form"
+                action="../search.html"
+                method="get"
+              >
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search docs"
+                  aria-label="Search docs"
+                />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </div>
+          </div>
+          <div
+            class="wy-menu wy-menu-vertical"
+            data-spy="affix"
+            role="navigation"
+            aria-label="Navigation menu"
+          >
+            <p class="caption" role="heading">
+              <span class="caption-text">Contents:</span>
+            </p>
+            <ul>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../installation.html"
+                  >Installation</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../reference.html"
+                  >Reference</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../usage.html">Usage</a>
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../contributing.html"
+                  >Contributor Guide</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../authors.html">Credits</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">snake</a>
+        </nav>
+
+        <div class="wy-nav-content">
+          <div class="rst-content">
+            <div role="navigation" aria-label="Page navigation">
+              <ul class="wy-breadcrumbs">
+                <li>
+                  <a
+                    href="../index.html"
+                    class="icon icon-home"
+                    aria-label="Home"
+                  ></a>
+                </li>
+                <li class="breadcrumb-item active">Algorithms</li>
+                <li class="wy-breadcrumbs-aside">
+                  <a
+                    href="../_sources/algorithms/algorithms.md.txt"
+                    rel="nofollow"
+                  >
+                    View page source</a
+                  >
+                </li>
+              </ul>
+              <hr />
+            </div>
+            <div
+              role="main"
+              class="document"
+              itemscope="itemscope"
+              itemtype="http://schema.org/Article"
+            >
+              <div itemprop="articleBody">
+                <section id="algorithms">
+                  <h1>
+                    Algorithms<a
+                      class="headerlink"
+                      href="#algorithms"
+                      title="Permalink to this heading"
+                      ></a
+                    >
+                  </h1>
+                  <ul class="simple">
+                    <li>
+                      <p>
+                        <a class="reference internal" href="#overview"
+                          ><span class="xref myst">Overview</span></a
+                        >
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <a class="reference internal" href="#solvers"
+                          ><span class="xref myst">Solvers</span></a
+                        >
+                      </p>
+                      <ul>
+                        <li>
+                          <p>
+                            <a class="reference internal" href="#path-solver"
+                              ><span class="xref myst">Path Solver</span></a
+                            >
+                          </p>
+                          <ul>
+                            <li>
+                              <p>
+                                <a
+                                  class="reference internal"
+                                  href="#shortest-path"
+                                  ><span class="xref myst"
+                                    >Shortest Path</span
+                                  ></a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  class="reference internal"
+                                  href="#longest-path"
+                                  ><span class="xref myst"
+                                    >Longest Path</span
+                                  ></a
+                                >
+                              </p>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <p>
+                            <a class="reference internal" href="#greedy-solver"
+                              ><span class="xref myst">Greedy Solver</span></a
+                            >
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            <a
+                              class="reference internal"
+                              href="#hamilton-solver"
+                              ><span class="xref myst">Hamilton Solver</span></a
+                            >
+                          </p>
+                          <ul>
+                            <li>
+                              <p>
+                                <a
+                                  class="reference internal"
+                                  href="#build-a-hamiltonian-cycle"
+                                  ><span class="xref myst"
+                                    >Build a Hamiltonian Cycle</span
+                                  ></a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  class="reference internal"
+                                  href="#take-shortcuts"
+                                  ><span class="xref myst"
+                                    >Take Shortcuts</span
+                                  ></a
+                                >
+                              </p>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <p>
+                            <a class="reference internal" href="#dqn-solver"
+                              ><span class="xref myst">DQN Solver</span></a
+                            >
+                          </p>
+                          <ul>
+                            <li>
+                              <p>
+                                <a
+                                  class="reference internal"
+                                  href="#state-vector"
+                                  ><span class="xref myst"
+                                    >State Vector</span
+                                  ></a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a class="reference internal" href="#actions"
+                                  ><span class="xref myst">Actions</span></a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  class="reference internal"
+                                  href="#comparisons"
+                                  ><span class="xref myst">Comparisons</span></a
+                                >
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                <a
+                                  class="reference internal"
+                                  href="#attachments"
+                                  ><span class="xref myst">Attachments</span></a
+                                >
+                              </p>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p>
+                        <a class="reference internal" href="#references"
+                          ><span class="xref myst">References</span></a
+                        >
+                      </p>
+                    </li>
+                  </ul>
+                  <section id="overview">
+                    <h2>
+                      Overview<a
+                        class="headerlink"
+                        href="#overview"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <p>
+                      In the game, the snake is allowed to move inside a
+                      2-dimensional playing field (game map) surrounded by
+                      walls. At each discrete interval (a time step), the snake
+                      must move forward, turn left, or turn right as the game
+                      requires that the snake cannot stop moving. The game will
+                      randomly generate and place one piece of food on the game
+                      map whenever there is no food on the map. When the snake
+                      moves onto a piece of food, the food is eaten and the
+                      snake’s length grows by one. The goal is to eat as many
+                      pieces of food as possible without ending the game by
+                      colliding the snake into itself or the walls.
+                    </p>
+                    <p>
+                      In our game settings, the game map will be 8 units tall
+                      and 8 units wide consisting of 64 available spaces. The
+                      snake will initially begin at the top-left corner, facing
+                      right, with an initial length of 4 units. Therefore, the
+                      snake can eat at most 60 pieces of food before filling up
+                      the entire map.
+                    </p>
+                  </section>
+                  <section id="solvers">
+                    <h2>
+                      Solvers<a
+                        class="headerlink"
+                        href="#solvers"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <p>
+                      All the problem solvers are subclasses of
+                      <a
+                        class="reference download internal"
+                        download=""
+                        href="../_downloads/9728c678c6561be25cb26873d49a5ab8/base.py"
+                        ><span class="xref download myst">BaseSolver</span></a
+                      >. The subclasses override
+                      <code class="docutils literal notranslate"
+                        ><span class="pre">BaseSolver.next_direc()</span></code
+                      >
+                      to return the next moving direction of the snake.
+                    </p>
+                    <section id="path-solver">
+                      <h3>
+                        Path Solver<a
+                          class="headerlink"
+                          href="#path-solver"
+                          title="Permalink to this heading"
+                          ></a
+                        >
+                      </h3>
+                      <p>
+                        <a
+                          class="reference download internal"
+                          download=""
+                          href="../_downloads/488fe9dad3d451d8992f0a56e75aa9d1/path.py"
+                          ><span class="xref download myst"
+                            >Path Solver</span
+                          ></a
+                        >
+                        provides methods to find the shortest path and the
+                        longest path from the snake’s head to other points on
+                        the game map. It does not directly decide the next
+                        moving direction of the snake, but help other solvers to
+                        work it out.
+                      </p>
+                      <section id="shortest-path">
+                        <h4>
+                          Shortest Path<a
+                            class="headerlink"
+                            href="#shortest-path"
+                            title="Permalink to this heading"
+                            ></a
+                          >
+                        </h4>
+                        <p>
+                          Path Solver uses
+                          <a
+                            class="reference external"
+                            href="https://en.wikipedia.org/wiki/Breadth-first_search"
+                            >breadth-first search</a
+                          >
+                          to find the shortest path. Intuitively, we expect the
+                          path to be as straight as possible so there will be
+                          less scattered empty points on the map. The trick for
+                          implementation is that during each iteration, the
+                          adjacent point in the last traversed direction will be
+                          traversed first.
+                        </p>
+                      </section>
+                      <section id="longest-path">
+                        <h4>
+                          Longest Path<a
+                            class="headerlink"
+                            href="#longest-path"
+                            title="Permalink to this heading"
+                            ></a
+                          >
+                        </h4>
+                        <p>
+                          The
+                          <a
+                            class="reference external"
+                            href="https://en.wikipedia.org/wiki/Longest_path_problem"
+                            >longest path problem</a
+                          >
+                          on the game map (i.e., a cyclic, undirected and
+                          unweighted graph) is NP-hard. Path Solver uses a
+                          heuristic algorithm to find suboptimal solutions.
+                        </p>
+                        <p>
+                          Suppose we want to find the longest path from point A
+                          to point B on a 4*4 game map. The solver first finds
+                          the shortest path between the two points and then
+                          extends each pair of path pieces until no extensions
+                          can be found:
+                        </p>
+                        <p><img alt="" src="../_images/build_longest.png" /></p>
+                      </section>
+                    </section>
+                    <section id="greedy-solver">
+                      <h3>
+                        Greedy Solver<a
+                          class="headerlink"
+                          href="#greedy-solver"
+                          title="Permalink to this heading"
+                          ></a
+                        >
+                      </h3>
+                      <p>
+                        <a
+                          class="reference download internal"
+                          download=""
+                          href="../_downloads/b21ba5959ff9b156991612f5b2920fa4/greedy.py"
+                          ><span class="xref download myst"
+                            >Greedy Solver</span
+                          ></a
+                        >
+                        directs the snake to eat the food along the shortest
+                        path if it thinks the snake will be safe. Otherwise, it
+                        makes the snake wander around until a safe path can be
+                        found. As it needs paths searching, it depends on
+                        <a class="reference internal" href="#path-solver"
+                          ><span class="xref myst">Path Solver</span></a
+                        >.
+                      </p>
+                      <p>
+                        Concretely, to find the snake <strong>S1</strong>’s next
+                        moving direction <strong>D</strong>, the solver follows
+                        the steps below:
+                      </p>
+                      <ol class="arabic simple">
+                        <li>
+                          <p>
+                            Compute the shortest path <strong>P1</strong> from
+                            <strong>S1</strong>’s head to the food. If
+                            <strong>P1</strong> exists, go to step 2. Otherwise,
+                            go to step 4.
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            Move a virtual snake <strong>S2</strong> (the same
+                            as <strong>S1</strong>) to eat the food along path
+                            <strong>P1</strong>.
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            Compute the longest path <strong>P2</strong> from
+                            <strong>S2</strong>’s head to its tail. If
+                            <strong>P2</strong> exists, let
+                            <strong>D</strong> be the first direction in path
+                            <strong>P1</strong>. Otherwise, go to step 4.
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            Compute the longest path <strong>P3</strong> from
+                            <strong>S1</strong>’s head to its tail. If
+                            <strong>P3</strong> exists, let
+                            <strong>D</strong> be the first direction in path
+                            <strong>P3</strong>. Otherwise, go to step 5.
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            Let <strong>D</strong> be the direction that makes
+                            <strong>S1</strong> the farthest from the food.
+                          </p>
+                        </li>
+                      </ol>
+                    </section>
+                    <section id="hamilton-solver">
+                      <h3>
+                        Hamilton Solver<a
+                          class="headerlink"
+                          href="#hamilton-solver"
+                          title="Permalink to this heading"
+                          ></a
+                        >
+                      </h3>
+                      <p>
+                        <a
+                          class="reference download internal"
+                          download=""
+                          href="../_downloads/3ba76d9420f822b47e549abe59e57b5c/hamilton.py"
+                          ><span class="xref download myst"
+                            >Hamilton Solver</span
+                          ></a
+                        >
+                        builds a Hamiltonian cycle on the game map first and
+                        then directs the snake to eat the food along the cycle
+                        path. To reduce the average steps the snake takes to
+                        success, it enables the snake to take shortcuts if
+                        possible. Again, it depends on
+                        <a class="reference internal" href="#path-solver"
+                          ><span class="xref myst">Path Solver</span></a
+                        >
+                        to find the longest path.
+                      </p>
+                      <section id="build-a-hamiltonian-cycle">
+                        <h4>
+                          Build a Hamiltonian Cycle<a
+                            class="headerlink"
+                            href="#build-a-hamiltonian-cycle"
+                            title="Permalink to this heading"
+                            ></a
+                          >
+                        </h4>
+                        <p>
+                          Suppose we want to build a Hamiltonian cycle on a 4*4
+                          map. Then our goal is to assign the path index to each
+                          point on the map. The image below shows a possible
+                          Hamiltonian cycle:
+                        </p>
+                        <p>
+                          <img alt="" src="../_images/hamilton_cycle.png" />
+                        </p>
+                        <p>
+                          To construct the cycle above, first we fix the point
+                          0, 1 and 2 (considering the snake’s initial head and
+                          bodies are 2, 1, 0, respectively). Then we make point
+                          1 unreachable and generate the longest path from point
+                          2 to point 0. Finally, we join the starting point 2
+                          and the ending point 0, which forms a Hamiltonian
+                          cycle:
+                        </p>
+                        <p>
+                          <img alt="" src="../_images/build_hamilton.png" />
+                        </p>
+                        <p>
+                          Note that this algorithm is not a general way to find
+                          a Hamiltonian cycle. It only works when the initial
+                          positions of the snake’s head and bodies are similar
+                          to the situation described above.
+                        </p>
+                      </section>
+                      <section id="take-shortcuts">
+                        <h4>
+                          Take Shortcuts<a
+                            class="headerlink"
+                            href="#take-shortcuts"
+                            title="Permalink to this heading"
+                            ></a
+                          >
+                        </h4>
+                        <p>
+                          Following a fixed cycle path all the time is tedious
+                          and time-consuming. Hamilton Solver directs the snake
+                          to take shortcuts according to the rules below<a
+                            class="reference external"
+                            href="https://johnflux.com/2015/05/02/nokia-6110-part-3-algorithms/"
+                            >[1]</a
+                          >.
+                        </p>
+                        <p>
+                          <img alt="" src="../_images/take_shortcuts.png" />
+                        </p>
+                      </section>
+                    </section>
+                    <section id="dqn-solver">
+                      <h3>
+                        DQN Solver<a
+                          class="headerlink"
+                          href="#dqn-solver"
+                          title="Permalink to this heading"
+                          ></a
+                        >
+                      </h3>
+                      <p>
+                        <a
+                          class="reference download internal"
+                          download=""
+                          href="../_downloads/65f6f2c87feb369cee0c6a7a5b2efb40/__init__.py"
+                          ><span class="xref download myst">DQN Solver</span></a
+                        >
+                        uses a deep reinforcement learning algorithm named Deep
+                        Q-Network<a
+                          class="reference external"
+                          href="https://www.nature.com/articles/nature14236"
+                          >[2]</a
+                        >
+                        (DQN) to solve the problem. DQN has three optimization
+                        algorithms-Double DQN<a
+                          class="reference external"
+                          href="https://arxiv.org/abs/1509.06461"
+                          >[3]</a
+                        >, Prioritized Experience Replay<a
+                          class="reference external"
+                          href="https://arxiv.org/abs/1511.05952"
+                          >[4]</a
+                        >
+                        and Dueling Network Structure<a
+                          class="reference external"
+                          href="https://arxiv.org/abs/1511.06581"
+                          >[5]</a
+                        >. We are not going to reiterate these algorithms here.
+                        For those who are interested or researching in deep
+                        reinforcement learning, DQN Solver provides performance
+                        comparisons for different combinations of these
+                        algorithms on training an agent for the Snake game.
+                      </p>
+                      <p>
+                        In DQN, we use a deep neural network to estimated the
+                        value function Q. The input for the network is the state
+                        of the agent while the output is the expected reward of
+                        each action the agent can take. The policy for the agent
+                        is epsilon-greedy, which gives the agent chances to
+                        exploit its environment.
+                      </p>
+                      <section id="state-vector">
+                        <h4>
+                          State Vector<a
+                            class="headerlink"
+                            href="#state-vector"
+                            title="Permalink to this heading"
+                            ></a
+                          >
+                        </h4>
+                        <p>
+                          The state vector for the Snake game has two parts. The
+                          first part is the
+                          <strong>global state vector</strong>, which stores the
+                          contents of each point on the map. Each point has 4
+                          types of contents-snake head, snake body, empty and
+                          food. As this is a discrete feature, we can binarize
+                          it so that each point can be represented as an integer
+                          vector of length 4. One and only one element in the
+                          vector is 1, indicating the corresponding type of the
+                          point, while the other three elements are 0. Under our
+                          game settings, the global state vector can be thought
+                          as an 8*8*4 image.
+                        </p>
+                        <p>
+                          The second part is the
+                          <strong>local state vector</strong>, which tells the
+                          snake its surrounding situation. The vector contains 3
+                          values (0 or 1), indicating whether the point in
+                          front/left/right of the snake head is dangerous (i.e.,
+                          wall or body in the direction).
+                        </p>
+                      </section>
+                      <section id="actions">
+                        <h4>
+                          Actions<a
+                            class="headerlink"
+                            href="#actions"
+                            title="Permalink to this heading"
+                            ></a
+                          >
+                        </h4>
+                        <p>
+                          There are two ways to direct the snake. The first one
+                          is <strong>relative direction</strong>, which means
+                          that the snake can move forward, leftward or rightward
+                          since these directions are “relative” to the snake’s
+                          current moving direction. Under relative direction,
+                          the global state vector is also relative. For example,
+                          when the snake is moving towards the right side of the
+                          map, the first element in the global state vector is
+                          the element at the top-right corner of the map.
+                        </p>
+                        <p>
+                          Comparing to relative direction, the other way to
+                          direct the snake is
+                          <strong>absolute direction</strong>. Under absolute
+                          direction, the snake can move leftward, upward,
+                          rightward and downward on the map. The first element
+                          of the global state vector is always the element at
+                          the top-left corner of the map. Moreover, the local
+                          state vector under absolute direction will have 4
+                          values since there are 4 actions the snake can take.
+                        </p>
+                        <p>
+                          Theoretically, using relative direction is more
+                          efficient since the game map is symmetric both
+                          horizontally and vertically. This is proved by
+                          experiments (we trained 4 models in 3000000 iterations
+                          using natural DQN algorithm):
+                        </p>
+                        <p>
+                          <img
+                            alt=""
+                            src="../_images/graph_dqn_4_legends.png"
+                          />
+                        </p>
+                        <p>
+                          From the image above we can figure out that using
+                          relative direction is better than absolute direction
+                          because the red line and the orange line are higher
+                          than the green line and the blue line, respectively.
+                          Moreover, local state vector is conducive to the
+                          training performance of the agent, as the red and the
+                          green line are higher than the orange and the blue
+                          line.
+                        </p>
+                      </section>
+                      <section id="comparisons">
+                        <h4>
+                          Comparisons<a
+                            class="headerlink"
+                            href="#comparisons"
+                            title="Permalink to this heading"
+                            ></a
+                          >
+                        </h4>
+                        <p>
+                          The three optimization algorithms can be combined to
+                          optimize DQN since they are from three different
+                          perspectives. There are 8 different combinations in
+                          total and the performance are shown below (3000000
+                          iterations, all trained with global and local state in
+                          relative direction):
+                        </p>
+                        <p>
+                          <img
+                            alt=""
+                            src="../_images/graph_dqn_8_legends.png"
+                          />
+                        </p>
+                        <p>
+                          Among the 8 combinations,
+                          <strong>DQN + Prioritized + Duel</strong> achieves the
+                          best performance because it receives the highest
+                          average snake length. Comparing to natural DQN, not
+                          only does it gets higher average snake length, but
+                          also lower average snake step, indicating that the
+                          snake agent trained by
+                          <strong>DQN + Prioritized + Duel</strong> is more
+                          efficient in consuming food.
+                        </p>
+                      </section>
+                      <section id="attachments">
+                        <h4>
+                          Attachments<a
+                            class="headerlink"
+                            href="#attachments"
+                            title="Permalink to this heading"
+                            ></a
+                          >
+                        </h4>
+                        <p>
+                          Please refer to
+                          <a
+                            class="reference download internal"
+                            download=""
+                            href="../_downloads/1584407e1a1ef5277d12d35c7cb8e0a3/presentation.pptx"
+                            ><span class="xref download myst"
+                              >my presentation</span
+                            ></a
+                          >
+                          for more details (e.g., environment design, network
+                          structure, etc).
+                        </p>
+                      </section>
+                    </section>
+                  </section>
+                  <section id="references">
+                    <h2>
+                      References<a
+                        class="headerlink"
+                        href="#references"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <ol class="arabic simple">
+                      <li>
+                        <p>
+                          Tapsell, J., Nokia 6110 Part 3 – Algorithms. (2015).
+                          <a
+                            class="reference external"
+                            href="https://johnflux.com/2015/05/02/nokia-6110-part-3-algorithms/"
+                            >[Link]</a
+                          >
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A.,
+                          Veness, J., Bellemare, M. G., et al. (2015).
+                          Human-level control through deep reinforcement
+                          learning. <em>Nature, 518</em>(7540), 529-533.
+                          <a
+                            class="reference external"
+                            href="https://www.nature.com/articles/nature14236"
+                            >[Link]</a
+                          >
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          van Hasselt, H., Guez, A., Silver, D. (2016). Deep
+                          reinforcement learning with double q-learning.
+                          <em
+                            >Proceedings of the Thirtieth AAAI Conference on
+                            Artificial Intelligence</em
+                          >, 2094-2100.
+                          <a
+                            class="reference external"
+                            href="https://arxiv.org/abs/1509.06461"
+                            >[Link]</a
+                          >
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          Schaul, T., Quan, J., Antonoglou, I., Silver, D.
+                          (2016). Prioritized experience replay. <em>ICLR</em>.
+                          <a
+                            class="reference external"
+                            href="https://arxiv.org/abs/1511.05952"
+                            >[Link]</a
+                          >
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          Wang, Z., Schaul, T., Hessel, M., van Hasselt, H.,
+                          Lanctot, M., de Freitas, N. (2016). Dueling network
+                          architectures for deep reinforcement learning.
+                          <em>ICML</em>.
+                          <a
+                            class="reference external"
+                            href="https://arxiv.org/abs/1511.06581"
+                            >[Link]</a
+                          >
+                        </p>
+                      </li>
+                    </ol>
+                  </section>
+                </section>
+              </div>
+            </div>
+            <footer>
+              <hr />
+
+              <div role="contentinfo">
+                <p>&#169; Copyright 2022, Semjon Geist.</p>
+              </div>
+
+              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
+              a
+              <a href="https://github.com/readthedocs/sphinx_rtd_theme"
+                >theme</a
+              >
+              provided by <a href="https://readthedocs.org">Read the Docs</a>.
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      jQuery(function () {
+        SphinxRtdTheme.Navigation.enable(true);
+      });
+    </script>
+  </body>
+</html>

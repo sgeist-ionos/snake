@@ -1,0 +1,1964 @@
+<!doctype html>
+<html class="writer-html5" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="generator"
+      content="Docutils 0.19: https://docutils.sourceforge.io/"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>snake.base package &mdash; snake 3.3.24 documentation</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/pygments.css?v=fa44fd50"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/css/theme.css?v=19f00094"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/custom.css?v=2fa51b1b"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/dark_mode_css/general.css?v=c0a7eb24"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/dark_mode_css/dark.css?v=bfd9ebc6"
+    />
+    <!--[if lt IE 9]>
+      <script src="_static/js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script
+      data-url_root="./"
+      id="documentation_options"
+      src="_static/documentation_options.js?v=ccc4c4f4"
+    ></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+    <script src="_static/dark_mode_js/theme_switcher.js?v=a2af87b2"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="snake.solver package" href="snake.solver.html" />
+    <link rel="prev" title="snake package" href="snake.html" />
+  </head>
+
+  <body class="wy-body-for-nav">
+    <div class="wy-grid-for-nav">
+      <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+          <div class="wy-side-nav-search">
+            <a href="index.html" class="icon icon-home"> snake </a>
+            <div class="version">3.3.24</div>
+            <div role="search">
+              <form
+                id="rtd-search-form"
+                class="wy-form"
+                action="search.html"
+                method="get"
+              >
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search docs"
+                  aria-label="Search docs"
+                />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </div>
+          </div>
+          <div
+            class="wy-menu wy-menu-vertical"
+            data-spy="affix"
+            role="navigation"
+            aria-label="Navigation menu"
+          >
+            <p class="caption" role="heading">
+              <span class="caption-text">Contents:</span>
+            </p>
+            <ul class="current">
+              <li class="toctree-l1">
+                <a class="reference internal" href="installation.html"
+                  >Installation</a
+                >
+              </li>
+              <li class="toctree-l1 current">
+                <a class="reference internal" href="reference.html"
+                  >Reference</a
+                >
+                <ul class="current">
+                  <li class="toctree-l2 current">
+                    <a class="reference internal" href="reference.html#packages"
+                      >Packages</a
+                    >
+                    <ul class="current">
+                      <li class="toctree-l3 current">
+                        <a class="reference internal" href="snake.html"
+                          >snake package</a
+                        >
+                        <ul class="current">
+                          <li class="toctree-l4 current">
+                            <a
+                              class="reference internal"
+                              href="snake.html#subpackages"
+                              >Subpackages</a
+                            >
+                          </li>
+                          <li class="toctree-l4">
+                            <a
+                              class="reference internal"
+                              href="snake.html#submodules"
+                              >Submodules</a
+                            >
+                          </li>
+                          <li class="toctree-l4">
+                            <a
+                              class="reference internal"
+                              href="snake.html#snake-game-module"
+                              >snake.game module</a
+                            >
+                          </li>
+                          <li class="toctree-l4">
+                            <a
+                              class="reference internal"
+                              href="snake.html#snake-gui-module"
+                              >snake.gui module</a
+                            >
+                          </li>
+                          <li class="toctree-l4">
+                            <a
+                              class="reference internal"
+                              href="snake.html#module-snake"
+                              >Module contents</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="usage.html">Usage</a>
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="contributing.html"
+                  >Contributor Guide</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="authors.html">Credits</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">snake</a>
+        </nav>
+
+        <div class="wy-nav-content">
+          <div class="rst-content">
+            <div role="navigation" aria-label="Page navigation">
+              <ul class="wy-breadcrumbs">
+                <li>
+                  <a
+                    href="index.html"
+                    class="icon icon-home"
+                    aria-label="Home"
+                  ></a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="reference.html">Reference</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="snake.html">snake package</a>
+                </li>
+                <li class="breadcrumb-item active">snake.base package</li>
+                <li class="wy-breadcrumbs-aside">
+                  <a href="_sources/snake.base.rst.txt" rel="nofollow">
+                    View page source</a
+                  >
+                </li>
+              </ul>
+              <hr />
+            </div>
+            <div
+              role="main"
+              class="document"
+              itemscope="itemscope"
+              itemtype="http://schema.org/Article"
+            >
+              <div itemprop="articleBody">
+                <section id="snake-base-package">
+                  <h1>
+                    snake.base package<a
+                      class="headerlink"
+                      href="#snake-base-package"
+                      title="Permalink to this heading"
+                      ></a
+                    >
+                  </h1>
+                  <section id="submodules">
+                    <h2>
+                      Submodules<a
+                        class="headerlink"
+                        href="#submodules"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                  </section>
+                  <section id="module-snake.base.direc">
+                    <span id="snake-base-direc-module"></span>
+                    <h2>
+                      snake.base.direc module<a
+                        class="headerlink"
+                        href="#module-snake.base.direc"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <dl class="py class">
+                      <dt class="sig sig-object py" id="snake.base.direc.Direc">
+                        <em class="property"
+                          ><span class="pre">class</span
+                          ><span class="w"> </span></em
+                        ><span class="sig-prename descclassname"
+                          ><span class="pre">snake.base.direc.</span></span
+                        ><span class="sig-name descname"
+                          ><span class="pre">Direc</span></span
+                        ><span class="sig-paren">(</span
+                        ><em class="sig-param"
+                          ><span class="n"
+                            ><span class="pre">value</span></span
+                          ></em
+                        ><span class="sig-paren">)</span
+                        ><a
+                          class="reference internal"
+                          href="_modules/snake/base/direc.html#Direc"
+                          ><span class="viewcode-link"
+                            ><span class="pre">[source]</span></span
+                          ></a
+                        ><a
+                          class="headerlink"
+                          href="#snake.base.direc.Direc"
+                          title="Permalink to this definition"
+                          ></a
+                        >
+                      </dt>
+                      <dd>
+                        <p>
+                          Bases:
+                          <code
+                            class="xref py py-class docutils literal notranslate"
+                            ><span class="pre">Enum</span></code
+                          >
+                        </p>
+                        <p>An enumeration.</p>
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.direc.Direc.DOWN"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">DOWN</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">4</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.direc.Direc.DOWN"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.direc.Direc.LEFT"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">LEFT</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">1</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.direc.Direc.LEFT"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.direc.Direc.NONE"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">NONE</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">0</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.direc.Direc.NONE"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.direc.Direc.RIGHT"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">RIGHT</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">3</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.direc.Direc.RIGHT"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.direc.Direc.UP"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">UP</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">2</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.direc.Direc.UP"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.direc.Direc.opposite"
+                          >
+                            <em class="property"
+                              ><span class="pre">static</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">opposite</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">direc</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/direc.html#Direc.opposite"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.direc.Direc.opposite"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+                      </dd>
+                    </dl>
+                  </section>
+                  <section id="module-snake.base.map">
+                    <span id="snake-base-map-module"></span>
+                    <h2>
+                      snake.base.map module<a
+                        class="headerlink"
+                        href="#module-snake.base.map"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <dl class="py class">
+                      <dt class="sig sig-object py" id="snake.base.map.Map">
+                        <em class="property"
+                          ><span class="pre">class</span
+                          ><span class="w"> </span></em
+                        ><span class="sig-prename descclassname"
+                          ><span class="pre">snake.base.map.</span></span
+                        ><span class="sig-name descname"
+                          ><span class="pre">Map</span></span
+                        ><span class="sig-paren">(</span
+                        ><em class="sig-param"
+                          ><span class="n"
+                            ><span class="pre">num_rows</span></span
+                          ></em
+                        >,
+                        <em class="sig-param"
+                          ><span class="n"
+                            ><span class="pre">num_cols</span></span
+                          ></em
+                        ><span class="sig-paren">)</span
+                        ><a
+                          class="reference internal"
+                          href="_modules/snake/base/map.html#Map"
+                          ><span class="viewcode-link"
+                            ><span class="pre">[source]</span></span
+                          ></a
+                        ><a
+                          class="headerlink"
+                          href="#snake.base.map.Map"
+                          title="Permalink to this definition"
+                          ></a
+                        >
+                      </dt>
+                      <dd>
+                        <p>
+                          Bases:
+                          <code
+                            class="xref py py-class docutils literal notranslate"
+                            ><span class="pre">object</span></code
+                          >
+                        </p>
+                        <p>2D game map.</p>
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.capacity"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">capacity</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.capacity"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.copy"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">copy</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.copy"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.copy"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.create_food"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">create_food</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">pos</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.create_food"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.create_food"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.create_rand_food"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">create_rand_food</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.create_rand_food"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.create_rand_food"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.food"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">food</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.food"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.has_food"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">has_food</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.has_food"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.has_food"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.is_empty"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">is_empty</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">pos</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.is_empty"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.is_empty"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.is_full"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">is_full</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.is_full"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.is_full"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd>
+                            <p>
+                              Check if the map is filled with the snake’s
+                              bodies.
+                            </p>
+                          </dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.is_inside"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">is_inside</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">pos</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.is_inside"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.is_inside"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.is_safe"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">is_safe</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">pos</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.is_safe"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.is_safe"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.num_cols"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">num_cols</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.num_cols"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.num_rows"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">num_rows</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.num_rows"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.point"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">point</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">pos</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.point"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.point"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd>
+                            <p>Return a point on the map.</p>
+                            <p>
+                              DO NOT directly modify the point type to
+                              PointType.FOOD and vice versa. Use {add|rm}_food()
+                              methods instead.
+                            </p>
+                            <dl class="field-list simple">
+                              <dt class="field-odd">
+                                Parameters<span class="colon">:</span>
+                              </dt>
+                              <dd class="field-odd">
+                                <p>
+                                  <strong>pos</strong> (<a
+                                    class="reference internal"
+                                    href="#snake.base.pos.Pos"
+                                    title="snake.base.pos.Pos"
+                                    ><em>base.pos.Pos</em></a
+                                  >) – The position of the point to be fetched
+                                </p>
+                              </dd>
+                              <dt class="field-even">
+                                Returns<span class="colon">:</span>
+                              </dt>
+                              <dd class="field-even">
+                                <p>The point at the given position.</p>
+                              </dd>
+                              <dt class="field-odd">
+                                Return type<span class="colon">:</span>
+                              </dt>
+                              <dd class="field-odd">
+                                <p>snake.point.Point</p>
+                              </dd>
+                            </dl>
+                          </dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.reset"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">reset</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.reset"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.reset"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.map.Map.rm_food"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">rm_food</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/map.html#Map.rm_food"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.map.Map.rm_food"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+                      </dd>
+                    </dl>
+                  </section>
+                  <section id="module-snake.base.point">
+                    <span id="snake-base-point-module"></span>
+                    <h2>
+                      snake.base.point module<a
+                        class="headerlink"
+                        href="#module-snake.base.point"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <dl class="py class">
+                      <dt class="sig sig-object py" id="snake.base.point.Point">
+                        <em class="property"
+                          ><span class="pre">class</span
+                          ><span class="w"> </span></em
+                        ><span class="sig-prename descclassname"
+                          ><span class="pre">snake.base.point.</span></span
+                        ><span class="sig-name descname"
+                          ><span class="pre">Point</span></span
+                        ><a
+                          class="reference internal"
+                          href="_modules/snake/base/point.html#Point"
+                          ><span class="viewcode-link"
+                            ><span class="pre">[source]</span></span
+                          ></a
+                        ><a
+                          class="headerlink"
+                          href="#snake.base.point.Point"
+                          title="Permalink to this definition"
+                          ></a
+                        >
+                      </dt>
+                      <dd>
+                        <p>
+                          Bases:
+                          <code
+                            class="xref py py-class docutils literal notranslate"
+                            ><span class="pre">object</span></code
+                          >
+                        </p>
+                        <p>Point on the game map.</p>
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.Point.type"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">type</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.Point.type"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+                      </dd>
+                    </dl>
+
+                    <dl class="py class">
+                      <dt
+                        class="sig sig-object py"
+                        id="snake.base.point.PointType"
+                      >
+                        <em class="property"
+                          ><span class="pre">class</span
+                          ><span class="w"> </span></em
+                        ><span class="sig-prename descclassname"
+                          ><span class="pre">snake.base.point.</span></span
+                        ><span class="sig-name descname"
+                          ><span class="pre">PointType</span></span
+                        ><span class="sig-paren">(</span
+                        ><em class="sig-param"
+                          ><span class="n"
+                            ><span class="pre">value</span></span
+                          ></em
+                        ><span class="sig-paren">)</span
+                        ><a
+                          class="reference internal"
+                          href="_modules/snake/base/point.html#PointType"
+                          ><span class="viewcode-link"
+                            ><span class="pre">[source]</span></span
+                          ></a
+                        ><a
+                          class="headerlink"
+                          href="#snake.base.point.PointType"
+                          title="Permalink to this definition"
+                          ></a
+                        >
+                      </dt>
+                      <dd>
+                        <p>
+                          Bases:
+                          <code
+                            class="xref py py-class docutils literal notranslate"
+                            ><span class="pre">Enum</span></code
+                          >
+                        </p>
+                        <p>Type of the points on the game map.</p>
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.BODY_DL"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">BODY_DL</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">107</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.BODY_DL"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.BODY_HOR"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">BODY_HOR</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">108</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.BODY_HOR"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.BODY_LU"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">BODY_LU</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">104</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.BODY_LU"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.BODY_RD"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">BODY_RD</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">106</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.BODY_RD"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.BODY_UR"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">BODY_UR</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">105</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.BODY_UR"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.BODY_VER"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">BODY_VER</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">109</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.BODY_VER"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.EMPTY"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">EMPTY</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">0</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.EMPTY"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.FOOD"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">FOOD</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">2</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.FOOD"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.HEAD_D"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">HEAD_D</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">103</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.HEAD_D"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.HEAD_L"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">HEAD_L</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">100</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.HEAD_L"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.HEAD_R"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">HEAD_R</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">102</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.HEAD_R"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.HEAD_U"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">HEAD_U</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">101</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.HEAD_U"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py attribute">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.point.PointType.WALL"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">WALL</span></span
+                            ><em class="property"
+                              ><span class="w"> </span
+                              ><span class="p"><span class="pre">=</span></span
+                              ><span class="w"> </span
+                              ><span class="pre">1</span></em
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.point.PointType.WALL"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+                      </dd>
+                    </dl>
+                  </section>
+                  <section id="module-snake.base.pos">
+                    <span id="snake-base-pos-module"></span>
+                    <h2>
+                      snake.base.pos module<a
+                        class="headerlink"
+                        href="#module-snake.base.pos"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <dl class="py class">
+                      <dt class="sig sig-object py" id="snake.base.pos.Pos">
+                        <em class="property"
+                          ><span class="pre">class</span
+                          ><span class="w"> </span></em
+                        ><span class="sig-prename descclassname"
+                          ><span class="pre">snake.base.pos.</span></span
+                        ><span class="sig-name descname"
+                          ><span class="pre">Pos</span></span
+                        ><span class="sig-paren">(</span
+                        ><em class="sig-param"
+                          ><span class="n"><span class="pre">x</span></span
+                          ><span class="o"><span class="pre">=</span></span
+                          ><span class="default_value"
+                            ><span class="pre">0</span></span
+                          ></em
+                        >,
+                        <em class="sig-param"
+                          ><span class="n"><span class="pre">y</span></span
+                          ><span class="o"><span class="pre">=</span></span
+                          ><span class="default_value"
+                            ><span class="pre">0</span></span
+                          ></em
+                        ><span class="sig-paren">)</span
+                        ><a
+                          class="reference internal"
+                          href="_modules/snake/base/pos.html#Pos"
+                          ><span class="viewcode-link"
+                            ><span class="pre">[source]</span></span
+                          ></a
+                        ><a
+                          class="headerlink"
+                          href="#snake.base.pos.Pos"
+                          title="Permalink to this definition"
+                          ></a
+                        >
+                      </dt>
+                      <dd>
+                        <p>
+                          Bases:
+                          <code
+                            class="xref py py-class docutils literal notranslate"
+                            ><span class="pre">object</span></code
+                          >
+                        </p>
+                        <p>Integer coordinate in 2D plane.</p>
+                        <p>
+                          The origin of the coordinate system is at the top-left
+                          corner, with x-axis extends downward and y-axis
+                          extends rightward.
+                        </p>
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.pos.Pos.adj"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">adj</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">direc</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/pos.html#Pos.adj"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.pos.Pos.adj"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd>
+                            <p>Return the adjacent Pos in a given direction.</p>
+                          </dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.pos.Pos.all_adj"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">all_adj</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/pos.html#Pos.all_adj"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.pos.Pos.all_adj"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd><p>Return a list of all the adjacent Pos.</p></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.pos.Pos.direc_to"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">direc_to</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">adj_pos</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/pos.html#Pos.direc_to"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.pos.Pos.direc_to"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd>
+                            <p>
+                              Return the direction of an adjacent Pos relative
+                              to self.
+                            </p>
+                          </dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.pos.Pos.manhattan_dist"
+                          >
+                            <em class="property"
+                              ><span class="pre">static</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">manhattan_dist</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">p1</span></span
+                              ></em
+                            >,
+                            <em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">p2</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/pos.html#Pos.manhattan_dist"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.pos.Pos.manhattan_dist"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.pos.Pos.x"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">x</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.pos.Pos.x"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.pos.Pos.y"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">y</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.pos.Pos.y"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+                      </dd>
+                    </dl>
+                  </section>
+                  <section id="module-snake.base.snake">
+                    <span id="snake-base-snake-module"></span>
+                    <h2>
+                      snake.base.snake module<a
+                        class="headerlink"
+                        href="#module-snake.base.snake"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <dl class="py class">
+                      <dt class="sig sig-object py" id="snake.base.snake.Snake">
+                        <em class="property"
+                          ><span class="pre">class</span
+                          ><span class="w"> </span></em
+                        ><span class="sig-prename descclassname"
+                          ><span class="pre">snake.base.snake.</span></span
+                        ><span class="sig-name descname"
+                          ><span class="pre">Snake</span></span
+                        ><span class="sig-paren">(</span
+                        ><em class="sig-param"
+                          ><span class="n"
+                            ><span class="pre">game_map</span></span
+                          ></em
+                        >,
+                        <em class="sig-param"
+                          ><span class="n"
+                            ><span class="pre">init_direc</span></span
+                          ><span class="o"><span class="pre">=</span></span
+                          ><span class="default_value"
+                            ><span class="pre">None</span></span
+                          ></em
+                        >,
+                        <em class="sig-param"
+                          ><span class="n"
+                            ><span class="pre">init_bodies</span></span
+                          ><span class="o"><span class="pre">=</span></span
+                          ><span class="default_value"
+                            ><span class="pre">None</span></span
+                          ></em
+                        >,
+                        <em class="sig-param"
+                          ><span class="n"
+                            ><span class="pre">init_types</span></span
+                          ><span class="o"><span class="pre">=</span></span
+                          ><span class="default_value"
+                            ><span class="pre">None</span></span
+                          ></em
+                        ><span class="sig-paren">)</span
+                        ><a
+                          class="reference internal"
+                          href="_modules/snake/base/snake.html#Snake"
+                          ><span class="viewcode-link"
+                            ><span class="pre">[source]</span></span
+                          ></a
+                        ><a
+                          class="headerlink"
+                          href="#snake.base.snake.Snake"
+                          title="Permalink to this definition"
+                          ></a
+                        >
+                      </dt>
+                      <dd>
+                        <p>
+                          Bases:
+                          <code
+                            class="xref py py-class docutils literal notranslate"
+                            ><span class="pre">object</span></code
+                          >
+                        </p>
+                        <p>Snake of the game.</p>
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.bodies"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">bodies</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.bodies"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.copy"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">copy</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/snake.html#Snake.copy"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.copy"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.dead"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">dead</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.dead"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.direc"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">direc</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.direc"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.direc_next"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">direc_next</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.direc_next"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.head"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">head</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/snake.html#Snake.head"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.head"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.len"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">len</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/snake.html#Snake.len"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.len"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.map"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">map</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.map"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.move"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">move</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">new_direc</span></span
+                              ><span class="o"><span class="pre">=</span></span
+                              ><span class="default_value"
+                                ><span class="pre">None</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/snake.html#Snake.move"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.move"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.move_path"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">move_path</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">path</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/snake.html#Snake.move_path"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.move_path"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.reset"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">reset</span></span
+                            ><span class="sig-paren">(</span
+                            ><em class="sig-param"
+                              ><span class="n"
+                                ><span class="pre">reset_map</span></span
+                              ><span class="o"><span class="pre">=</span></span
+                              ><span class="default_value"
+                                ><span class="pre">True</span></span
+                              ></em
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/snake.html#Snake.reset"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.reset"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py property">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.steps"
+                          >
+                            <em class="property"
+                              ><span class="pre">property</span
+                              ><span class="w"> </span></em
+                            ><span class="sig-name descname"
+                              ><span class="pre">steps</span></span
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.steps"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+
+                        <dl class="py method">
+                          <dt
+                            class="sig sig-object py"
+                            id="snake.base.snake.Snake.tail"
+                          >
+                            <span class="sig-name descname"
+                              ><span class="pre">tail</span></span
+                            ><span class="sig-paren">(</span
+                            ><span class="sig-paren">)</span
+                            ><a
+                              class="reference internal"
+                              href="_modules/snake/base/snake.html#Snake.tail"
+                              ><span class="viewcode-link"
+                                ><span class="pre">[source]</span></span
+                              ></a
+                            ><a
+                              class="headerlink"
+                              href="#snake.base.snake.Snake.tail"
+                              title="Permalink to this definition"
+                              ></a
+                            >
+                          </dt>
+                          <dd></dd>
+                        </dl>
+                      </dd>
+                    </dl>
+                  </section>
+                  <section id="module-snake.base">
+                    <span id="module-contents"></span>
+                    <h2>
+                      Module contents<a
+                        class="headerlink"
+                        href="#module-snake.base"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                  </section>
+                </section>
+              </div>
+            </div>
+            <footer>
+              <div
+                class="rst-footer-buttons"
+                role="navigation"
+                aria-label="Footer"
+              >
+                <a
+                  href="snake.html"
+                  class="btn btn-neutral float-left"
+                  title="snake package"
+                  accesskey="p"
+                  rel="prev"
+                  ><span
+                    class="fa fa-arrow-circle-left"
+                    aria-hidden="true"
+                  ></span>
+                  Previous</a
+                >
+                <a
+                  href="snake.solver.html"
+                  class="btn btn-neutral float-right"
+                  title="snake.solver package"
+                  accesskey="n"
+                  rel="next"
+                  >Next
+                  <span
+                    class="fa fa-arrow-circle-right"
+                    aria-hidden="true"
+                  ></span
+                ></a>
+              </div>
+
+              <hr />
+
+              <div role="contentinfo">
+                <p>&#169; Copyright 2022, Semjon Geist.</p>
+              </div>
+
+              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
+              a
+              <a href="https://github.com/readthedocs/sphinx_rtd_theme"
+                >theme</a
+              >
+              provided by <a href="https://readthedocs.org">Read the Docs</a>.
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      jQuery(function () {
+        SphinxRtdTheme.Navigation.enable(true);
+      });
+    </script>
+  </body>
+</html>

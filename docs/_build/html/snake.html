@@ -1,0 +1,1430 @@
+<!doctype html>
+<html class="writer-html5" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="generator"
+      content="Docutils 0.19: https://docutils.sourceforge.io/"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>snake package &mdash; snake 3.3.24 documentation</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/pygments.css?v=fa44fd50"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/css/theme.css?v=19f00094"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/custom.css?v=2fa51b1b"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/dark_mode_css/general.css?v=c0a7eb24"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="_static/dark_mode_css/dark.css?v=bfd9ebc6"
+    />
+    <!--[if lt IE 9]>
+      <script src="_static/js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script
+      data-url_root="./"
+      id="documentation_options"
+      src="_static/documentation_options.js?v=ccc4c4f4"
+    ></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/dark_mode_js/default_dark.js?v=fd565c74"></script>
+    <script src="_static/dark_mode_js/theme_switcher.js?v=a2af87b2"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="snake.base package" href="snake.base.html" />
+    <link rel="prev" title="Reference" href="reference.html" />
+  </head>
+
+  <body class="wy-body-for-nav">
+    <div class="wy-grid-for-nav">
+      <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+          <div class="wy-side-nav-search">
+            <a href="index.html" class="icon icon-home"> snake </a>
+            <div class="version">3.3.24</div>
+            <div role="search">
+              <form
+                id="rtd-search-form"
+                class="wy-form"
+                action="search.html"
+                method="get"
+              >
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search docs"
+                  aria-label="Search docs"
+                />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </div>
+          </div>
+          <div
+            class="wy-menu wy-menu-vertical"
+            data-spy="affix"
+            role="navigation"
+            aria-label="Navigation menu"
+          >
+            <p class="caption" role="heading">
+              <span class="caption-text">Contents:</span>
+            </p>
+            <ul class="current">
+              <li class="toctree-l1">
+                <a class="reference internal" href="installation.html"
+                  >Installation</a
+                >
+              </li>
+              <li class="toctree-l1 current">
+                <a class="reference internal" href="reference.html"
+                  >Reference</a
+                >
+                <ul class="current">
+                  <li class="toctree-l2 current">
+                    <a class="reference internal" href="reference.html#packages"
+                      >Packages</a
+                    >
+                    <ul class="current">
+                      <li class="toctree-l3 current">
+                        <a class="current reference internal" href="#"
+                          >snake package</a
+                        >
+                        <ul>
+                          <li class="toctree-l4">
+                            <a class="reference internal" href="#subpackages"
+                              >Subpackages</a
+                            >
+                          </li>
+                          <li class="toctree-l4">
+                            <a class="reference internal" href="#submodules"
+                              >Submodules</a
+                            >
+                          </li>
+                          <li class="toctree-l4">
+                            <a
+                              class="reference internal"
+                              href="#snake-game-module"
+                              >snake.game module</a
+                            >
+                          </li>
+                          <li class="toctree-l4">
+                            <a
+                              class="reference internal"
+                              href="#snake-gui-module"
+                              >snake.gui module</a
+                            >
+                          </li>
+                          <li class="toctree-l4">
+                            <a class="reference internal" href="#module-snake"
+                              >Module contents</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="usage.html">Usage</a>
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="contributing.html"
+                  >Contributor Guide</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="authors.html">Credits</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">snake</a>
+        </nav>
+
+        <div class="wy-nav-content">
+          <div class="rst-content">
+            <div role="navigation" aria-label="Page navigation">
+              <ul class="wy-breadcrumbs">
+                <li>
+                  <a
+                    href="index.html"
+                    class="icon icon-home"
+                    aria-label="Home"
+                  ></a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="reference.html">Reference</a>
+                </li>
+                <li class="breadcrumb-item active">snake package</li>
+                <li class="wy-breadcrumbs-aside">
+                  <a href="_sources/snake.rst.txt" rel="nofollow">
+                    View page source</a
+                  >
+                </li>
+              </ul>
+              <hr />
+            </div>
+            <div
+              role="main"
+              class="document"
+              itemscope="itemscope"
+              itemtype="http://schema.org/Article"
+            >
+              <div itemprop="articleBody">
+                <section id="snake-package">
+                  <h1>
+                    snake package<a
+                      class="headerlink"
+                      href="#snake-package"
+                      title="Permalink to this heading"
+                      ></a
+                    >
+                  </h1>
+                  <section id="subpackages">
+                    <h2>
+                      Subpackages<a
+                        class="headerlink"
+                        href="#subpackages"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <div class="toctree-wrapper compound">
+                      <ul>
+                        <li class="toctree-l1">
+                          <a class="reference internal" href="snake.base.html"
+                            >snake.base package</a
+                          >
+                          <ul>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.base.html#submodules"
+                                >Submodules</a
+                              >
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.base.html#module-snake.base.direc"
+                                >snake.base.direc module</a
+                              >
+                              <ul>
+                                <li class="toctree-l3">
+                                  <a
+                                    class="reference internal"
+                                    href="snake.base.html#snake.base.direc.Direc"
+                                    ><code class="docutils literal notranslate"
+                                      ><span class="pre">Direc</span></code
+                                    ></a
+                                  >
+                                  <ul>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.direc.Direc.DOWN"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Direc.DOWN</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.direc.Direc.LEFT"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Direc.LEFT</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.direc.Direc.NONE"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Direc.NONE</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.direc.Direc.RIGHT"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Direc.RIGHT</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.direc.Direc.UP"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Direc.UP</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.direc.Direc.opposite"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Direc.opposite()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.base.html#module-snake.base.map"
+                                >snake.base.map module</a
+                              >
+                              <ul>
+                                <li class="toctree-l3">
+                                  <a
+                                    class="reference internal"
+                                    href="snake.base.html#snake.base.map.Map"
+                                    ><code class="docutils literal notranslate"
+                                      ><span class="pre">Map</span></code
+                                    ></a
+                                  >
+                                  <ul>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.capacity"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.capacity</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.copy"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.copy()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.create_food"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.create_food()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.create_rand_food"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.create_rand_food()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.food"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.food</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.has_food"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.has_food()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.is_empty"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.is_empty()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.is_full"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.is_full()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.is_inside"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.is_inside()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.is_safe"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.is_safe()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.num_cols"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.num_cols</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.num_rows"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.num_rows</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.point"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.point()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.reset"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.reset()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.map.Map.rm_food"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Map.rm_food()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.base.html#module-snake.base.point"
+                                >snake.base.point module</a
+                              >
+                              <ul>
+                                <li class="toctree-l3">
+                                  <a
+                                    class="reference internal"
+                                    href="snake.base.html#snake.base.point.Point"
+                                    ><code class="docutils literal notranslate"
+                                      ><span class="pre">Point</span></code
+                                    ></a
+                                  >
+                                  <ul>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.Point.type"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Point.type</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li class="toctree-l3">
+                                  <a
+                                    class="reference internal"
+                                    href="snake.base.html#snake.base.point.PointType"
+                                    ><code class="docutils literal notranslate"
+                                      ><span class="pre">PointType</span></code
+                                    ></a
+                                  >
+                                  <ul>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.BODY_DL"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.BODY_DL</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.BODY_HOR"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.BODY_HOR</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.BODY_LU"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.BODY_LU</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.BODY_RD"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.BODY_RD</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.BODY_UR"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.BODY_UR</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.BODY_VER"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.BODY_VER</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.EMPTY"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.EMPTY</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.FOOD"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.FOOD</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.HEAD_D"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.HEAD_D</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.HEAD_L"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.HEAD_L</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.HEAD_R"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.HEAD_R</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.HEAD_U"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.HEAD_U</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.point.PointType.WALL"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >PointType.WALL</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.base.html#module-snake.base.pos"
+                                >snake.base.pos module</a
+                              >
+                              <ul>
+                                <li class="toctree-l3">
+                                  <a
+                                    class="reference internal"
+                                    href="snake.base.html#snake.base.pos.Pos"
+                                    ><code class="docutils literal notranslate"
+                                      ><span class="pre">Pos</span></code
+                                    ></a
+                                  >
+                                  <ul>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.pos.Pos.adj"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Pos.adj()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.pos.Pos.all_adj"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Pos.all_adj()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.pos.Pos.direc_to"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Pos.direc_to()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.pos.Pos.manhattan_dist"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Pos.manhattan_dist()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.pos.Pos.x"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre">Pos.x</span></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.pos.Pos.y"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre">Pos.y</span></code
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.base.html#module-snake.base.snake"
+                                >snake.base.snake module</a
+                              >
+                              <ul>
+                                <li class="toctree-l3">
+                                  <a
+                                    class="reference internal"
+                                    href="snake.base.html#snake.base.snake.Snake"
+                                    ><code class="docutils literal notranslate"
+                                      ><span class="pre">Snake</span></code
+                                    ></a
+                                  >
+                                  <ul>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.bodies"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.bodies</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.copy"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.copy()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.dead"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.dead</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.direc"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.direc</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.direc_next"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.direc_next</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.head"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.head()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.len"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.len()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.map"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.map</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.move"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.move()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.move_path"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.move_path()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.reset"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.reset()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.steps"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.steps</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.base.html#snake.base.snake.Snake.tail"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >Snake.tail()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.base.html#module-snake.base"
+                                >Module contents</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="toctree-l1">
+                          <a class="reference internal" href="snake.solver.html"
+                            >snake.solver package</a
+                          >
+                          <ul>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.solver.html#subpackages"
+                                >Subpackages</a
+                              >
+                              <ul>
+                                <li class="toctree-l3">
+                                  <a
+                                    class="reference internal"
+                                    href="snake.solver.dqn.html"
+                                    >snake.solver.dqn package</a
+                                  >
+                                  <ul>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.dqn.html#submodules"
+                                        >Submodules</a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.dqn.html#snake-solver-dqn-history-module"
+                                        >snake.solver.dqn.history module</a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.dqn.html#snake-solver-dqn-logger-module"
+                                        >snake.solver.dqn.logger module</a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.dqn.html#snake-solver-dqn-memory-module"
+                                        >snake.solver.dqn.memory module</a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.dqn.html#snake-solver-dqn-snakeaction-module"
+                                        >snake.solver.dqn.snakeaction module</a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.dqn.html#module-contents"
+                                        >Module contents</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.solver.html#submodules"
+                                >Submodules</a
+                              >
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.solver.html#module-snake.solver.base"
+                                >snake.solver.base module</a
+                              >
+                              <ul>
+                                <li class="toctree-l3">
+                                  <a
+                                    class="reference internal"
+                                    href="snake.solver.html#snake.solver.base.BaseSolver"
+                                    ><code class="docutils literal notranslate"
+                                      ><span class="pre">BaseSolver</span></code
+                                    ></a
+                                  >
+                                  <ul>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.html#snake.solver.base.BaseSolver.close"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >BaseSolver.close()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.html#snake.solver.base.BaseSolver.map"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >BaseSolver.map</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.html#snake.solver.base.BaseSolver.next_direc"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >BaseSolver.next_direc()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.solver.html#snake.solver.base.BaseSolver.snake"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >BaseSolver.snake</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.solver.html#snake-solver-greedy-module"
+                                >snake.solver.greedy module</a
+                              >
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.solver.html#snake-solver-hamilton-module"
+                                >snake.solver.hamilton module</a
+                              >
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.solver.html#snake-solver-path-module"
+                                >snake.solver.path module</a
+                              >
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.solver.html#module-snake.solver"
+                                >Module contents</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="toctree-l1">
+                          <a class="reference internal" href="snake.util.html"
+                            >snake.util package</a
+                          >
+                          <ul>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.util.html#submodules"
+                                >Submodules</a
+                              >
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.util.html#module-snake.util.sumtree"
+                                >snake.util.sumtree module</a
+                              >
+                              <ul>
+                                <li class="toctree-l3">
+                                  <a
+                                    class="reference internal"
+                                    href="snake.util.html#snake.util.sumtree.SumTree"
+                                    ><code class="docutils literal notranslate"
+                                      ><span class="pre">SumTree</span></code
+                                    ></a
+                                  >
+                                  <ul>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.capacity"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.capacity</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.data"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.data</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.insert"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.insert()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.leaves"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.leaves()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.max_leaf"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.max_leaf()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.min_leaf"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.min_leaf()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.retrieve"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.retrieve()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.sum"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.sum()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.tree"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.tree</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                    <li class="toctree-l4">
+                                      <a
+                                        class="reference internal"
+                                        href="snake.util.html#snake.util.sumtree.SumTree.update"
+                                        ><code
+                                          class="docutils literal notranslate"
+                                          ><span class="pre"
+                                            >SumTree.update()</span
+                                          ></code
+                                        ></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="toctree-l2">
+                              <a
+                                class="reference internal"
+                                href="snake.util.html#module-snake.util"
+                                >Module contents</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </section>
+                  <section id="submodules">
+                    <h2>
+                      Submodules<a
+                        class="headerlink"
+                        href="#submodules"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                  </section>
+                  <section id="snake-game-module">
+                    <h2>
+                      snake.game module<a
+                        class="headerlink"
+                        href="#snake-game-module"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                  </section>
+                  <section id="snake-gui-module">
+                    <h2>
+                      snake.gui module<a
+                        class="headerlink"
+                        href="#snake-gui-module"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                  </section>
+                  <section id="module-snake">
+                    <span id="module-contents"></span>
+                    <h2>
+                      Module contents<a
+                        class="headerlink"
+                        href="#module-snake"
+                        title="Permalink to this heading"
+                        ></a
+                      >
+                    </h2>
+                  </section>
+                </section>
+              </div>
+            </div>
+            <footer>
+              <div
+                class="rst-footer-buttons"
+                role="navigation"
+                aria-label="Footer"
+              >
+                <a
+                  href="reference.html"
+                  class="btn btn-neutral float-left"
+                  title="Reference"
+                  accesskey="p"
+                  rel="prev"
+                  ><span
+                    class="fa fa-arrow-circle-left"
+                    aria-hidden="true"
+                  ></span>
+                  Previous</a
+                >
+                <a
+                  href="snake.base.html"
+                  class="btn btn-neutral float-right"
+                  title="snake.base package"
+                  accesskey="n"
+                  rel="next"
+                  >Next
+                  <span
+                    class="fa fa-arrow-circle-right"
+                    aria-hidden="true"
+                  ></span
+                ></a>
+              </div>
+
+              <hr />
+
+              <div role="contentinfo">
+                <p>&#169; Copyright 2022, Semjon Geist.</p>
+              </div>
+
+              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
+              a
+              <a href="https://github.com/readthedocs/sphinx_rtd_theme"
+                >theme</a
+              >
+              provided by <a href="https://readthedocs.org">Read the Docs</a>.
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      jQuery(function () {
+        SphinxRtdTheme.Navigation.enable(true);
+      });
+    </script>
+  </body>
+</html>

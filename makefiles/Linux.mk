@@ -35,7 +35,7 @@ clean-build: ## remove build artifacts
 	rm -fr dist/
 	rm -fr .eggs/
 	rm -fr cmake-build-debug
-	rm -fr inst/_cornflakes/cmake-build-debug
+	rm -fr inst/_snake/cmake-build-debug
 	find . -name '*.egg-info' -exec rm -fr {} +
 	find . -name '*.egg' -exec rm -f {} +
 
@@ -52,22 +52,22 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	flake8 cornflakes tests
+	flake8 snake tests
 
 test: ## run tests quickly with the default Python
 	pytest -o log_cli=true
 
 test-mypy:
-	mypy cornflakes tests docs/conf.py
+	mypy snake tests docs/conf.py
 
 test-xdoctest:
-	python -m xdoctest cornflakes all
+	python -m xdoctest snake all
 
 test-pytype:
-	pytype --disable=import-error cornflakes tests docs/conf.py
+	pytype --disable=import-error snake tests docs/conf.py
 
 test-typeguard:
-	 pytest --typeguard-packages=cornflakes
+	 pytest --typeguard-packages=snake
 
 test-types: test-mypy test-xdoctest test-typeguard test-pytype
 
@@ -75,18 +75,18 @@ test-all: ## run tests on every Python version with tox
 	nox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source cornflakes -m pytest
+	coverage run --source snake -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/cornflakes.rst
+	rm -f docs/snake.rst
 	rm -f docs/modules.rst
 	rm -rf docs/_generated
 	rm -rf docs/_build
-	rm -f docs/cornflakes*.rst
-	sphinx-apidoc -o docs cornflakes
+	rm -f docs/snake*.rst
+	sphinx-apidoc -o docs snake
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html
@@ -96,15 +96,15 @@ servedocs: docs ## compile the docs watching for changes
 
 bump-patch:
 	git pull
-	cornflakes bump "patch"
+	snake bump "patch"
 
 bump-minor:
 	git pull
-	cornflakes bump "minor"
+	snake bump "minor"
 
 bump-major:
 	git pull
-	cornflakes bump "major"
+	snake bump "major"
 
 bump: bump-patch # default
 
@@ -173,7 +173,7 @@ release: pr-merge-if-ready
 
 
 update:
-	cornflakes update
+	snake update
 
 publish: dist ## package and upload a release
 	poetry publish

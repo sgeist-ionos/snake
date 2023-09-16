@@ -33,7 +33,7 @@ clean-build: ## remove build artifacts
 	if exist build rd /s /q dist
 	if exist build rd /s /q .eggs
 	if exist build rd /s /q cmake-build-debug
-	if exist build rd /s /q inst/_cornflakes/cmake-build-debug
+	if exist build rd /s /q inst/_snake/cmake-build-debug
 	for /d /r . %%d in (*.egg-info) do @if exist "%%d" echo "%%d" && rd /s/q "%%d"
 	del /q /s /f .\*.egg
 
@@ -51,7 +51,7 @@ clean-test: ## remove test and coverage artifacts
 	if exist .pytest_cache rd /s /q .pytest_cache
 
 lint: ## check style with flake8
-	flake8 cornflakes tests
+	flake8 snake tests
 
 test: ## run tests quickly with the default Python
 	pytest
@@ -60,18 +60,18 @@ test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source cornflakes -m pytest
+	coverage run --source snake -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov\index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	del /f /q docs\cornflakes.rst
+	del /f /q docs\snake.rst
 	del /f /q docs\modules.rst
 	del /f /q docs/_generated
 	del /f /q docs/_build
-	del /f /q docs/cornflakes*.rst
-	sphinx-apidoc -o docs cornflakes
+	del /f /q docs/snake*.rst
+	sphinx-apidoc -o docs snake
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 

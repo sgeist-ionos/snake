@@ -18,7 +18,7 @@ except ImportError:
     print("[bold blue]Try installing it using [bold green]pip install nox-poetry [bold blue]! ")
     sys.exit(1)
 
-package = "cornflakes"
+package = "snake"
 python_versions = ["3.8", "3.9", "3.10", "3.11"]
 nox.options.sessions = (
     "pre-commit",
@@ -149,7 +149,7 @@ def safety(session: Session) -> None:
 @session(python=python_versions)
 def mypy(session: Session) -> None:
     """Type-check using mypy."""
-    args = session.posargs or ["cornflakes", "tests", "docs/conf.py"]
+    args = session.posargs or ["snake", "tests", "docs/conf.py"]
     session.run("pip", "install", "ninja")
     session.run("pip", "install", "poetry")
     session.run("pip", "install", "pydantic[dotenv]")
@@ -165,7 +165,7 @@ def pytype(session: Session):
     """Run the static type checker."""
     args = session.posargs or [
         "--disable=import-error",
-        "cornflakes",
+        "snake",
         "tests",
         "docs/conf.py",
     ]  # "--disable=import-error"

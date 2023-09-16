@@ -38,7 +38,7 @@ Path Solver uses [breadth-first search][wiki-bfs] to find the shortest path. Int
 
 The [longest path problem][wiki-longest-path] on the game map (i.e., a cyclic, undirected and unweighted graph) is NP-hard. Path Solver uses a heuristic algorithm to find suboptimal solutions.
 
-Suppose we want to find the longest path from point A to point B on a 4*4 game map. The solver first finds the shortest path between the two points and then extends each pair of path pieces until no extensions can be found:
+Suppose we want to find the longest path from point A to point B on a 4\*4 game map. The solver first finds the shortest path between the two points and then extends each pair of path pieces until no extensions can be found:
 
 ![][img-build-longest]
 
@@ -60,7 +60,7 @@ Concretely, to find the snake **S1**'s next moving direction **D**, the solver f
 
 #### Build a Hamiltonian Cycle
 
-Suppose we want to build a Hamiltonian cycle on a 4*4 map. Then our goal is to assign the path index to each point on the map. The image below shows a possible Hamiltonian cycle:
+Suppose we want to build a Hamiltonian cycle on a 4\*4 map. Then our goal is to assign the path index to each point on the map. The image below shows a possible Hamiltonian cycle:
 
 ![][img-hamilton-cycle]
 
@@ -115,31 +115,25 @@ Please refer to [my presentation][ppt-dqn] for more details (e.g., environment d
 ## References
 
 1. Tapsell, J., Nokia 6110 Part 3 – Algorithms. (2015). [[Link]][ref-shortcuts]
-2. Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., et al. (2015). Human-level control through deep reinforcement learning. *Nature, 518*(7540), 529-533. [[Link]][ref-dqn]
-3. van Hasselt, H., Guez, A., Silver, D. (2016). Deep reinforcement learning with double q-learning. *Proceedings of the Thirtieth AAAI Conference on Artificial Intelligence*, 2094-2100. [[Link]][ref-ddqn]
-4. Schaul, T., Quan, J., Antonoglou, I., Silver, D. (2016). Prioritized experience replay. *ICLR*. [[Link]][ref-pri]
-5. Wang, Z., Schaul, T., Hessel, M., van Hasselt, H., Lanctot, M., de Freitas, N. (2016). Dueling network architectures for deep reinforcement learning. *ICML*. [[Link]][ref-duel]
-
+2. Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., et al. (2015). Human-level control through deep reinforcement learning. _Nature, 518_(7540), 529-533. [[Link]][ref-dqn]
+3. van Hasselt, H., Guez, A., Silver, D. (2016). Deep reinforcement learning with double q-learning. _Proceedings of the Thirtieth AAAI Conference on Artificial Intelligence_, 2094-2100. [[Link]][ref-ddqn]
+4. Schaul, T., Quan, J., Antonoglou, I., Silver, D. (2016). Prioritized experience replay. _ICLR_. [[Link]][ref-pri]
+5. Wang, Z., Schaul, T., Hessel, M., van Hasselt, H., Lanctot, M., de Freitas, N. (2016). Dueling network architectures for deep reinforcement learning. _ICML_. [[Link]][ref-duel]
 
 [wiki-bfs]: https://en.wikipedia.org/wiki/Breadth-first_search
 [wiki-longest-path]: https://en.wikipedia.org/wiki/Longest_path_problem
-
 [src-basesolver]: ../snake/solver/base.py
 [src-pathsolver]: ../snake/solver/path.py
 [src-greedysolver]: ../snake/solver/greedy.py
 [src-hamiltonsolver]: ../snake/solver/hamilton.py
 [src-dqnsolver]: ../snake/solver/dqn/__init__.py
-
 [img-build-longest]: ./images/build_longest.png
 [img-hamilton-cycle]: ./images/hamilton_cycle.png
 [img-build-hamilton]: ./images/build_hamilton.png
 [img-take-shortcuts]: ./images/take_shortcuts.png
-
 [img-dqn-4-legends]: ./images/graph_dqn_4_legends.png
 [img-dqn-8-legends]: ./images/graph_dqn_8_legends.png
-
 [ppt-dqn]: ./presentation.pptx
-
 [ref-shortcuts]: https://johnflux.com/2015/05/02/nokia-6110-part-3-algorithms/
 [ref-dqn]: https://www.nature.com/articles/nature14236
 [ref-ddqn]: https://arxiv.org/abs/1509.06461

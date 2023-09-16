@@ -31,9 +31,7 @@ LABELS_ZH = {
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Plot dqn performance comparation graphs."
-    )
+    parser = argparse.ArgumentParser(description="Plot dqn performance comparation graphs.")
     parser.add_argument("path", help="Path to history data directory")
     parser.add_argument("-zh", action="store_true", help="use Chinese characters")
     args = parser.parse_args()
@@ -99,12 +97,8 @@ def main():
     max_step = (
         plot_one(os.path.join(args.path, "step-dqn-visual-absolute.npy"), legends[0]),
         plot_one(os.path.join(args.path, "step-dqn-visual-relative.npy"), legends[1]),
-        plot_one(
-            os.path.join(args.path, "step-dqn-important-absolute.npy"), legends[2]
-        ),
-        plot_one(
-            os.path.join(args.path, "step-dqn-important-relative.npy"), legends[3]
-        ),
+        plot_one(os.path.join(args.path, "step-dqn-important-absolute.npy"), legends[2]),
+        plot_one(os.path.join(args.path, "step-dqn-important-relative.npy"), legends[3]),
     )
     add_decorations("snake_step")
 

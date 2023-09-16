@@ -4,9 +4,7 @@ from snake.base import PointType, Pos
 
 
 class GameWindow(tk.Tk):
-    def __init__(
-        self, title, conf, game_map, game=None, on_exit=None, keybindings=None
-    ):
+    def __init__(self, title, conf, game_map, game=None, on_exit=None, keybindings=None):
         super().__init__()
         super().title(title)
         super().resizable(width=False, height=False)
@@ -131,12 +129,8 @@ class GameWindow(tk.Tk):
             for j in range(1, self._map.num_cols - 2):
                 x = j * self._grid_width
                 y = i * self._grid_height
-                self._canvas.create_line(
-                    x, 0, x, self._conf.map_height, fill=self._conf.color_line
-                )
-                self._canvas.create_line(
-                    0, y, self._conf.map_width, y, fill=self._conf.color_line
-                )
+                self._canvas.create_line(x, 0, x, self._conf.map_height, fill=self._conf.color_line)
+                self._canvas.create_line(0, y, self._conf.map_width, y, fill=self._conf.color_line)
 
     def _draw_info_panel(self):
         self._canvas.create_line(

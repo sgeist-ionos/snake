@@ -22,9 +22,7 @@ def test_init():
 
 def test_move_eat():
     m = Map(5, 5)
-    s = Snake(
-        m, Direc.RIGHT, [Pos(1, 2), Pos(1, 1)], [PointType.HEAD_R, PointType.BODY_HOR]
-    )
+    s = Snake(m, Direc.RIGHT, [Pos(1, 2), Pos(1, 1)], [PointType.HEAD_R, PointType.BODY_HOR])
     assert s.len() == 2
     m.create_food(Pos(1, 3))
     assert m.has_food()

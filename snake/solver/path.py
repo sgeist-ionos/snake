@@ -1,6 +1,6 @@
+from collections import deque
 import random
 import sys
-from collections import deque
 
 from snake.base import Direc, PointType
 from snake.solver.base import BaseSolver
@@ -11,9 +11,7 @@ class _TableCell:
         self.reset()
 
     def __str__(self):
-        return (
-            f"{{ dist: {self.dist}  parent: {str(self.parent)}  visit: {self.visit} }}"
-        )
+        return f"{{ dist: {self.dist}  parent: {str(self.parent)}  visit: {self.visit} }}"
 
     __repr__ = __str__
 
@@ -28,10 +26,7 @@ class _TableCell:
 class PathSolver(BaseSolver):
     def __init__(self, snake):
         super().__init__(snake)
-        self._table = [
-            [_TableCell() for _ in range(snake.map.num_cols)]
-            for _ in range(snake.map.num_rows)
-        ]
+        self._table = [[_TableCell() for _ in range(snake.map.num_cols)] for _ in range(snake.map.num_rows)]
 
     @property
     def table(self):

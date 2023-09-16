@@ -2,22 +2,22 @@
 
 The project focuses on the artificial intelligence of the [Snake][snake-wiki] game. The snake's goal is to eat the food continuously and fill the map with its bodies as soon as possible. Originally, the project was [written in C++][snake-cpp]. It has now been rewritten in Python for a user-friendly GUI and the simplicity in algorithm implementations.
 
-***[Algorithms >][doc-algorithms]***
+**_[Algorithms >][doc-algorithms]_**
 
 ## Experiments
 
 We use two metrics to evaluate the performance of an AI:
 
-1. **Average Length:** Average length the snake has grown to (*max:* 64).
+1. **Average Length:** Average length the snake has grown to (_max:_ 64).
 2. **Average Steps:** Average steps the snake has moved.
 
 Test results (averaged over 1000 episodes):
 
-| Solver | Demo (optimal) | Average Length | Average Steps |
-| :----: | :------------: | :------------: | :-----------: |
-|[Hamilton][doc-hamilton]|![][demo-hamilton]|63.93|717.83|
-|[Greedy][doc-greedy]|![][demo-greedy]|60.15|904.56|
-|[DQN][doc-dqn]<br>(experimental)|![][demo-dqn]|24.44|131.69|
+|              Solver              |   Demo (optimal)   | Average Length | Average Steps |
+| :------------------------------: | :----------------: | :------------: | :-----------: |
+|     [Hamilton][doc-hamilton]     | ![][demo-hamilton] |     63.93      |    717.83     |
+|       [Greedy][doc-greedy]       |  ![][demo-greedy]  |     60.15      |    904.56     |
+| [DQN][doc-dqn]<br>(experimental) |   ![][demo-dqn]    |     24.44      |    131.69     |
 
 ## Installation
 
@@ -38,16 +38,13 @@ python -m pytest
 
 See the [LICENSE](./LICENSE) file for license rights and limitations.
 
-
 [snake-wiki]: https://en.wikipedia.org/wiki/Snake_(video_game)
 [snake-cpp]: https://github.com/chuyangliu/snake/tree/7227f5e0f3185b07e9e3de1ac5c19a17b9de3e3c
-
 [doc-tkinter]: https://docs.python.org/3/library/tkinter.html
 [doc-algorithms]: ./docs/algorithms.md
 [doc-greedy]: ./docs/algorithms.md#greedy-solver
 [doc-hamilton]: ./docs/algorithms.md#hamilton-solver
 [doc-dqn]: ./docs/algorithms.md#dqn-solver
-
 [demo-hamilton]: ./docs/images/solver_hamilton.gif
 [demo-greedy]: ./docs/images/solver_greedy.gif
 [demo-dqn]: ./docs/images/solver_dqn.gif
